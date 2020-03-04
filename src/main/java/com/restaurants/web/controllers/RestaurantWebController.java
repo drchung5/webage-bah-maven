@@ -32,10 +32,6 @@ public class RestaurantWebController {
 
       String serviceURL = environment.getProperty("restaurantList.service.url");
 
-      if( serviceURL == null ) {
-        throw new Exception( "Unable to access environment variable: RESTAURANT_LIST_SERVICE_URL" );
-      }
-
       ResponseEntity<Restaurant[]> response = restTemplate.getForEntity(
           serviceURL, Restaurant[].class
       );
